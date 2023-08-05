@@ -20,7 +20,6 @@ export const ViewCart = () => {
                         type="button"
                         colorScheme="blue"
                         borderRadius="10px"
-                        backgroundColor="blue"
                         fontSize="12px"
                         fontWeight="medium"
                         leftIcon={<Image src={cartImg} width="21" height="21" alt="cart" />}
