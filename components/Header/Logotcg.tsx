@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react"
+import { Box, Circle } from "@chakra-ui/react"
 import Image from "next/image"
 import logoTcg from '../../public/images/tcg-logo.png'
 
@@ -10,17 +10,13 @@ export const Logotcg = () => {
             left="50%"
             transform="translateX(-50%)"
         >
-          
-            <Box 
-                backgroundColor= "#fff"
-                width= "50px"
-                height= "50px"
-                borderRadius= "100%"
+            <Circle 
+                size='48px' 
+                bg='#fff' 
                 position= "absolute"
-                top= "0"
+                top= "2px"
                 left= "50%"
-                transform= "translateX(-50%)"
-            />
+                transform= "translateX(-50%)"/>
             <Box 
                 position="relative"
                 zIndex="3"
