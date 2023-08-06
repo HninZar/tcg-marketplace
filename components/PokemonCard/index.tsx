@@ -6,7 +6,7 @@ import { Fragment } from 'react'
 
 export const PokemonCard = () => {
   return (
-    <Grid templateColumns="repeat(3, 1fr)" rowGap="50px" columnGap="160px">
+    <Grid templateColumns="repeat(3, 1fr)" rowGap="50px" columnGap="80px">
       <Fragment>
         <GridItem width="full">
           <Center>

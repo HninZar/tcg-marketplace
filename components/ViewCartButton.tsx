@@ -1,9 +1,13 @@
-import { Box, Button, Center, Circle } from '@chakra-ui/react'
+import { Box, Button, Center, Circle, useDisclosure } from '@chakra-ui/react'
 import Image from 'next/image'
 import cartImg from '../public/images/cart.png'
+import { CartModal } from './CartModal';
 
 export const ViewCart = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
+    <>
     <Box
       position="fixed"
       bottom="0"
@@ -23,6 +27,7 @@ export const ViewCart = () => {
             fontSize="12px"
             fontWeight="medium"
             leftIcon={<Image src={cartImg} width="21" height="21" alt="cart" />}
+            onClick={onOpen}
           >
             View cart
           </Button>
@@ -41,5 +46,8 @@ export const ViewCart = () => {
         </Box>
       </Center>
     </Box>
+    <CartModal isOpen={isOpen} onClose={onClose} />
+    
+  </>
   )
 }
