@@ -11,12 +11,12 @@ type Response = {
 
 export const useCards = () => {
 
-    const fetchProjects = ({ pageParam = 1 }) => 
+    const fetchCards = ({ pageParam = 1 }) => 
      fetch(`https://api.pokemontcg.io/v2/cards?pageSize=9&page=${pageParam}`)
      .then(res => res.json())
      .then<Response>(res => res) 
 
-    return useInfiniteQuery(['cards'], fetchProjects,  {
+    return useInfiniteQuery(['cards'], fetchCards,  {
         getNextPageParam: (lastPage) => {
             //console.table(lastPage)
             if (lastPage.data.length > 0) {
