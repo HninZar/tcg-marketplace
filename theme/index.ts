@@ -28,6 +28,10 @@ const theme = extendTheme({
           color: 'rgb(188, 187, 187)',
         },
       },
+      img: {
+        maxWidth: '100%',
+        height: 'auto',
+      },
     },
   },
 })

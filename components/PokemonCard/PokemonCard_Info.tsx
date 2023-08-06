@@ -1,6 +1,13 @@
 import { HStack, Stack, Text } from '@chakra-ui/react'
 
-export const PokemonCard_Info = () => {
+type CardInfoProps = {
+  name : string
+  rarity : string
+  price : number
+  qty: number
+}
+
+export const PokemonCard_Info = ({name, rarity, price, qty}: CardInfoProps) => {
   return (
     <Stack
       pt="70px"
@@ -13,11 +20,11 @@ export const PokemonCard_Info = () => {
       position="relative"
       spacing="0"
     >
-      <Text fontSize="25px" fontWeight="bold">
-        Pokemon
+      <Text fontSize="24px" fontWeight="bold" textAlign="Center">
+        {name}
       </Text>
       <HStack>
-        <Text color="#0F6DB0">rarity</Text>
+        <Text color="#0F6DB0">{rarity}</Text>
       </HStack>
       <HStack
         justifyContent="space-around"
@@ -27,8 +34,8 @@ export const PokemonCard_Info = () => {
         fontSize="20px"
         color="#696969"
       >
-        <Text> $3.5 </Text>
-        <Text> 60 left</Text>
+        <Text> ${price} </Text>
+        <Text> {qty} left</Text>
       </HStack>
     </Stack>
   )

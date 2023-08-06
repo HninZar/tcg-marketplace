@@ -1,18 +1,19 @@
 import { Header } from '@/components/Header/Header'
-import { ChakraProvider, Container } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
-import { extendTheme } from '@chakra-ui/react'
 import theme from '@/theme'
-import { ViewCart } from '@/components/ViewCartButton'
+import { QueryClient, QueryClientProvider } from 'react-query'
 
 export default function App({ Component, pageProps }: AppProps) {
+  const queryClient = new QueryClient();
+
   return (
-    <ChakraProvider theme={theme}>
-      <Header />
-      <Container maxW="container.lg">
+    <QueryClientProvider client={queryClient}>
+      <ChakraProvider theme={theme}>
+        <Header />
         <Component {...pageProps} />
-      </Container>
-      <ViewCart />
-    </ChakraProvider>
+
+      </ChakraProvider>
+    </QueryClientProvider>
   )
 }
