@@ -20,7 +20,7 @@ export const PokemonCard_Info = ({name, rarity, price, qty}: CardInfoProps) => {
       position="relative"
       spacing="0"
     >
-      <Text fontSize="24px" fontWeight="bold" textAlign="Center">
+      <Text fontSize="24px" fontWeight="bold" textAlign="center">
         {name}
       </Text>
       <HStack>

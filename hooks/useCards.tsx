@@ -1,4 +1,4 @@
-import { Card } from '@/data/Card';
+import { Card } from '@/data/PokemonCard';
 import { useInfiniteQuery } from 'react-query'
 
 type Response = {
