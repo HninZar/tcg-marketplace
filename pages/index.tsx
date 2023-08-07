@@ -1,12 +1,15 @@
 import { PokemonCard } from '@/components/PokemonCard'
 import { SearchForm } from '@/components/SearchForm'
 import { ViewCart } from '@/components/ViewCartButton'
+import { SearchFormValues } from '@/data/SearchFormValues'
 import { useCards } from '@/hooks/useCards'
 import { SearchIcon } from '@chakra-ui/icons'
 import { Stack, Center, Grid, GridItem, Spinner, Text, Button, Container } from '@chakra-ui/react'
-import { Fragment} from 'react'
+import { Fragment, useState} from 'react'
 
 export default function Home() {
+  const [searchValues, setSearchValues] = useState<SearchFormValues>();
+  
   const {
     data,
     error,
@@ -14,14 +17,14 @@ export default function Home() {
     hasNextPage,
     isFetchingNextPage,
     status,
-  } = useCards();
+  } = useCards(searchValues || {});
 
   return (
     <>
     <Container maxW="container.lg">
       <main>
         <Stack backgroundColor="#f9f9f9" pt="90px" pb="120px">
-          <SearchForm />
+          <SearchForm onSubmitValues={setSearchValues}/>
           
           <Stack pt="35px">
             <Grid templateColumns="repeat(3, 1fr)" rowGap="50px" columnGap="80px">
