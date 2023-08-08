@@ -7,15 +7,15 @@ type TotalProps = {
 
 export const CartModal_Total = ({ count, total }: TotalProps) => {
   return (
-    <Stack mt="20px">
-      <HStack w={300} fontWeight="semibold">
+    <Stack mt="20px" w="full" justifyContent="center" alignItems="center">
+      <HStack fontWeight="semibold" w={{ base: '100%', lg: '250px' }}>
         <Text>Total cards</Text>
         <Spacer />
         <Text color="red.500">{count}</Text>
       </HStack>
 
       <HStack
-        w={300}
+        w={{ base: '100%', lg: '250px' }}
         justifyContent="space-between"
         fontSize="20px"
         fontWeight="bold"

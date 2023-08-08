@@ -8,45 +8,48 @@ import { SearchForm_AutoSubmit } from './SearchForm_AutoSubmit'
 import { SearchFormValues } from '@/data/SearchFormValues'
 
 type onSubmitValuesProps = {
-  onSubmitValues : (values: SearchFormValues) => void;
+  onSubmitValues: (values: SearchFormValues) => void
 }
 
-export const SearchForm = ({onSubmitValues} : onSubmitValuesProps) => {
-
-   //Inital Value for Formik
-   const initialValues: SearchFormValues = {
+export const SearchForm = ({ onSubmitValues }: onSubmitValuesProps) => {
+  //Inital Value for Formik
+  const initialValues: SearchFormValues = {
     name: '',
     type: '',
     rarity: '',
-    set: ''
+    set: '',
   }
 
   return (
-    <Formik 
-    initialValues={initialValues}
-    onSubmit={onSubmitValues}
-    >
+    <Formik initialValues={initialValues} onSubmit={onSubmitValues}>
+      <Flex justifyContent="center">
+        <Box maxW="600px" mt="30" width="full">
+          <Form>
+            <Stack
+              direction={{
+                base: 'column',
+                lg: 'row',
+              }}
+              spacing="2px"
+            >
+              <HStack width={{ base: '100%', lg: '40%' }}>
+                <SearchForm_input />
+              </HStack>
+              <HStack
+                width={{ base: '100%', lg: '50%' }}
+                spacing={{ base: '5px', lg: '2px' }}
+                mt={{ base: '15px', lg: '0px' }}
+              >
+                <SearchForm_Type />
+                <SearchForm_Rarity />
+                <SearchForm_Set />
+              </HStack>
+            </Stack>
 
-    <Flex justifyContent="center">
-      <Box maxW="600px" mt="30" width="full">
-        <Form>
-          
-          <Stack direction={['column', 'row']} spacing="2px">
-            <HStack width="40%">
-              <SearchForm_input />
-            </HStack>
-            <HStack width="50%" spacing="2px">
-              <SearchForm_Type />
-              <SearchForm_Rarity />
-              <SearchForm_Set />
-            </HStack>
-          </Stack>
-
-          <SearchForm_AutoSubmit />
-        </Form>
-        
-      </Box>
-    </Flex>
+            <SearchForm_AutoSubmit />
+          </Form>
+        </Box>
+      </Flex>
     </Formik>
   )
 }

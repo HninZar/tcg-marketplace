@@ -21,11 +21,10 @@ type Props = {
 }
 
 export const CartModal_CardItem = ({ cart }: Props) => {
-  console.log(cart)
   const { increase, decrease, remove, clearAll } = useCartContext()
   const price = cart.card.cardmarket.prices.averageSellPrice
-  const id = cart.id
-  const qty = cart.qty
+  const { id, qty } = cart
+  const totalPrice = (price * qty).toFixed(2)
 
   return (
     <Flex width="full" height="107px" mb="25px">
@@ -110,7 +109,7 @@ export const CartModal_CardItem = ({ cart }: Props) => {
               price
             </Text>
             <Text fontWeight="bold" color="blue.500">
-              ${price * cart.qty}
+              ${totalPrice}
             </Text>
           </VStack>
         </VStack>

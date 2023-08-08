@@ -1,13 +1,18 @@
 import { HStack, Stack, Text } from '@chakra-ui/react'
 
 type CardInfoProps = {
-  name : string
-  rarity : string
-  price : number
+  name: string
+  rarity: string
+  price: number
   qty: number
 }
 
-export const PokemonCard_Info = ({name, rarity, price, qty}: CardInfoProps) => {
+export const PokemonCard_Info = ({
+  name,
+  rarity,
+  price,
+  qty,
+}: CardInfoProps) => {
   return (
     <Stack
       pt="70px"

@@ -6,16 +6,14 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { CartWrapper } from '@/context/AddToCart'
 
 export default function App({ Component, pageProps }: AppProps) {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient()
 
   return (
     <QueryClientProvider client={queryClient}>
       <ChakraProvider theme={theme}>
         <CartWrapper>
-
-        <Header />
-        <Component {...pageProps} />
-        
+          <Header />
+          <Component {...pageProps} />
         </CartWrapper>
       </ChakraProvider>
     </QueryClientProvider>

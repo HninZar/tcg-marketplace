@@ -1,11 +1,10 @@
 import { useSets } from '@/hooks/useSets'
 import { Select } from '@chakra-ui/react'
-import { useField } from 'formik';
+import { useField } from 'formik'
 
 export const SearchForm_Set = () => {
-  
-  const{data} = useSets();
-  const [field] = useField('set');
+  const { data } = useSets()
+  const [field] = useField('set')
 
   return (
     <Select
@@ -13,12 +12,15 @@ export const SearchForm_Set = () => {
       placeholder="Set"
       color="#bcbbbb"
       backgroundColor="white"
-      borderRadius="0px"
-      borderRightRadius="50px"
+      borderRadius={{ base: '100px', lg: '0px 50px 50px 0px' }}
     >
-      {data && data.map( set =>
-        <option value={set.id} key={set.id}> {set.name}</option>
-      )}
+      {data &&
+        data.map((set) => (
+          <option value={set.id} key={set.id}>
+            {' '}
+            {set.name}
+          </option>
+        ))}
     </Select>
   )
 }

@@ -1,11 +1,10 @@
-import { useRarities } from '@/hooks/useRarities';
+import { useRarities } from '@/hooks/useRarities'
 import { Select } from '@chakra-ui/react'
-import { useField } from 'formik';
+import { useField } from 'formik'
 
 export const SearchForm_Rarity = () => {
-
-  const { data } = useRarities();
-  const [field] = useField('rarity');
+  const { data } = useRarities()
+  const [field] = useField('rarity')
 
   return (
     <Select
@@ -13,11 +12,15 @@ export const SearchForm_Rarity = () => {
       placeholder="Rarity"
       color="#bcbbbb"
       backgroundColor="white"
-      borderRadius="0px"
+      borderRadius={{ base: '100px', lg: '0px' }}
     >
-      {data && data.map( raritie => (
-        <option value={raritie} key={raritie}> {raritie}</option>
-      ))}
+      {data &&
+        data.map((raritie) => (
+          <option value={raritie} key={raritie}>
+            {' '}
+            {raritie}
+          </option>
+        ))}
     </Select>
   )
 }
