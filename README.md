@@ -1,6 +1,5 @@
 # tcg-marketplace
-
-1. React + TypeScript + Next.js
+ React + TypeScript + Next.js
 
 ## 1. Installation
 
@@ -18,8 +17,12 @@ $ npm i
 
 - CSS => Chakra UI
 - Form => Formik
+- React Context
+- TypeScript
+- React Query
+- Immer
 
-### 1.3 Running the Project
+### 1.4 Running the Project
 
 ```bash
 npm run dev
