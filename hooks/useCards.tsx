@@ -1,5 +1,6 @@
 import { Card } from '@/data/Card'
 import { useInfiniteQuery } from 'react-query'
+import { API } from './API'
 
 type Response = {
   data: Card[]
@@ -16,7 +17,7 @@ type Props = {
 }
 
 export const useCards = ({ name, type, rarity, set }: Props) => {
-  let url = 'https://api.pokemontcg.io/v2/cards?pageSize=9'
+  let url = `${API.baseURL}/cards?pageSize=9`
   let query = ''
 
   if (name) {
@@ -39,8 +40,8 @@ export const useCards = ({ name, type, rarity, set }: Props) => {
     url += `&q=${query}`
   }
 
-  const fetchCards = async ({ pageParam = 1 }) =>
-    await fetch(`${url}&page=${pageParam}`).then<Response>((response) => {
+  const fetchCards = ({ pageParam = 1 }) =>
+    fetch(`${url}&page=${pageParam}`).then<Response>((response) => {
       if (!response.ok) {
         throw new Error('Failed to fetch data')
       }

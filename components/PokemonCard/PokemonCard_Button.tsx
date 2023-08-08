@@ -1,7 +1,7 @@
 import { Button, Stack, VStack } from '@chakra-ui/react'
 
 type Props = {
-  selected?: boolean
+  selected: boolean
   onClick: () => void
 }
 export const PokemonCard_Button = ({ selected, onClick }: Props) => {

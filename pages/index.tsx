@@ -32,9 +32,9 @@ export default function Home() {
     status,
   } = useCards(searchValues || {})
 
-  if (error) {
-    return <Center pt="200px">No Data Found</Center>
-  }
+  // if (error) {
+  //   return <Center pt="200px">No Data Found</Center>
+  // }
 
   return (
     <>
@@ -45,7 +45,8 @@ export default function Home() {
 
             <Stack pt="35px">
               <Grid templateColumns={columns} rowGap="50px" columnGap="80px">
-                {data &&
+                {error ? <Center >No Data Found</Center>  
+                :  data &&
                   data.pages.map((pages, index) => (
                     <Fragment key={index}>
                       {pages.count === 0 ? (
@@ -58,9 +59,9 @@ export default function Home() {
                             </Center>
                           </GridItem>
                         ))
-                      )}
+                      )} ? 
                     </Fragment>
-                  ))}
+                  )) }
               </Grid>
             </Stack>
 

@@ -15,12 +15,7 @@ export const CartModal_Success = ({ onSuccessButtonClick }: onCloseProps) => {
         </Text>
       </HStack>
       <HStack justify="center" mt="20px">
-        <Button
-          colorScheme="blue"
-          onClick={() => {
-            onSuccessButtonClick()
-          }}
-        >
+        <Button colorScheme="blue" onClick={() => onSuccessButtonClick()}>
           OK
         </Button>
       </HStack>

@@ -3,7 +3,6 @@ import { PokemonCard_Button } from './PokemonCard_Button'
 import { PokemonCard_Image } from './PokemonCard_Image'
 import { PokemonCard_Info } from './PokemonCard_Info'
 import { Card } from '@/data/Card'
-import { useState } from 'react'
 import { useCartContext } from '@/context/AddToCart'
 
 type CardProps = {

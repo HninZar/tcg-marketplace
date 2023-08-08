@@ -4,7 +4,6 @@ import {
   HStack,
   IconButton,
   Image,
-  Stack,
   Text,
   VStack,
 } from '@chakra-ui/react'
@@ -20,8 +19,8 @@ type Props = {
   cart: Cart
 }
 
-export const CartModal_CardItem = ({ cart }: Props) => {
-  const { increase, decrease, remove, clearAll } = useCartContext()
+export const CartModal_CardList = ({ cart }: Props) => {
+  const { increase, decrease, remove } = useCartContext()
   const price = cart.card.cardmarket.prices.averageSellPrice
   const { id, qty } = cart
   const totalPrice = (price * qty).toFixed(2)

@@ -12,7 +12,7 @@ type onSubmitValuesProps = {
 }
 
 export const SearchForm = ({ onSubmitValues }: onSubmitValuesProps) => {
-  //Inital Value for Formik
+ 
   const initialValues: SearchFormValues = {
     name: '',
     type: '',

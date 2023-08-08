@@ -1,6 +1,10 @@
 import { Box, Button, HStack, Stack, Text } from '@chakra-ui/react'
 
-export const CartModal_NoItem = () => {
+type ModalProps = {
+  onClose: () => void
+}
+
+export const CartModal_NoItem = ({onClose}: ModalProps) => {
   return (
     <Stack p="120px 0px 70px 0px">
       <HStack justify="center">
@@ -10,7 +14,7 @@ export const CartModal_NoItem = () => {
       </HStack>
       <HStack justify="center">
         <Box>
-          <Button>Shop Now</Button>
+          <Button onClick={onClose}>Shop Now</Button>
         </Box>
       </HStack>
     </Stack>

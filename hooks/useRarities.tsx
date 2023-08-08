@@ -1,8 +1,10 @@
 import { useQuery } from 'react-query'
+import { API } from './API'
 
 export const useRarities = () => {
+  let url = `${API.baseURL}/rarities`
   const fetchRarities = () =>
-    fetch('https://api.pokemontcg.io/v2/rarities')
+    fetch(`${url}`)
       .then((res) => res.json())
       .then<string[]>((res) => res.data)
 
