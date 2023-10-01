@@ -59,7 +59,7 @@ export default function Home() {
                             </Center>
                           </GridItem>
                         ))
-                      )} ? 
+                      )}
                     </Fragment>
                   )) }
               </Grid>
